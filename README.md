@@ -174,7 +174,7 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/tcp_chat.git
+git clone https://github.com/GolffyCoding/TCP-Chat-Rust.git
 cd tcp_chat
 
 # Build the project
