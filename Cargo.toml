@@ -1,0 +1,29 @@
+[package]
+name = "tcp_chat"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full", "rt-multi-thread", "macros", "net", "sync", "time", "io-util", "io-std"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json", "fmt", "ansi"] }
+serde = { version = "1.0", features = ["derive"] }
+chrono = "0.4"
+thiserror = "1.0"
+anyhow = "1.0"
+dashmap = "5.5"
+bytes = "1.5"
+
+[dev-dependencies]
+tokio-test = "0.4"
+criterion = "0.5"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+debug = true
